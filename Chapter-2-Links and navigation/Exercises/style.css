@@ -1,0 +1,47 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Set the font for the entire page */
+    line-height: 1.6; /* Improve readability with line height */
+    margin: 20px; /* Add margin around the body */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Styles for the navigation bar */
+nav {
+    background-color: #4CAF50; /* Green background for the nav bar */
+    padding: 10px; /* Add padding */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin-right: 20px; /* Space between items */
+}
+
+nav a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Styles for the button */
+.button {
+    background-color: #d9534f; /* Red background for the button */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Styles for section headings */
+h1, h2 {
+    color: #333; /* Darker color for headings */
+}
+
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
