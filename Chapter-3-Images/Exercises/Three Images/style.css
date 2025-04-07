@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif; /* Set the font for the entire page */
+    text-align: center; /* Center align text */
+    background-color: #f0f0f0; /* Light background color */
+}
+
+.image-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the images */
+    gap: 20px; /* Space between images */
+}
+
+img {
+    filter: brightness(0.8) contrast(1.2); /* Apply CSS filters */
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+figcaption {
+    font-size: 14px; /* Smaller font for captions */
+    color: #555; /* Dark gray color for captions */
+}
