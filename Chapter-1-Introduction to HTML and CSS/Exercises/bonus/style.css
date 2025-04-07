@@ -1,0 +1,49 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Set the font for the entire page */
+    line-height: 1.6; /* Improve readability with line height */
+    margin: 20px; /* Add margin around the body */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Styles for the main heading */
+h1 {
+    color: #4CAF50; /* Green color for the main heading */
+    text-align: center; /* Center the main heading */
+}
+
+/* Styles for section headings */
+h2 {
+    color: #333; /* Darker color for section headers */
+    border-bottom: 2px solid #4CAF50; /* Underline section headers */
+    padding-bottom: 5px; /* Add space below the header */
+}
+
+/* Styles for lists */
+ul {
+    margin-left: 20px; /* Indent unordered lists */
+}
+
+li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+/* Styles for code blocks */
+code {
+    background-color: #e8e8e8; /* Light gray background for code */
+    padding: 2px 4px; /* Add padding around code */
+    border-radius: 4px; /* Rounded corners for code blocks */
+}
+
+/* Styles for preformatted text */
+pre {
+    background-color: #f4f4f4; /* Slightly darker gray for preformatted text */
+    padding: 10px; /* Add padding around preformatted text */
+    border-left: 4px solid #4CAF50; /* Green left border */
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+}
+
+/* Styles for strong text */
+strong {
+    color: #d9534f; /* Red color for strong text */
+}
