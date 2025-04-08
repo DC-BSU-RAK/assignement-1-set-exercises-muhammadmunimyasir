@@ -54,6 +54,11 @@ h2 {
     height: 150px; /* Set height for images */
     margin: 10px; /* Space between images */
 }
+square-image {
+    width: 150px; /* Set width for images */
+    height: 150px; /* Set height for images */
+    margin: 10px; /* Space between images */
+}
 
 /* Footer Styles */
 footer {
