@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Set a clean font */
+    line-height: 1.6; /* Improve readability */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+/* Navigation Bar Styles */
+nav {
+    background: #333; /* Dark background for the nav */
+    color: #fff; /* White text color */
+    padding: 10px 0; /* Padding for the nav */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center the nav items */
+}
+
+nav ul li {
+    display: inline; /* Display items in a line */
+    margin-right: 20px; /* Space between items */
+}
+
+nav ul li a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Padding for clickable area */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+nav ul li a:hover {
+    background: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Section Styles */
+h1, h2 {
+    text-align: center; /* Center headings */
+    color: #333; /* Dark text color */
+}
+
+section {
+    padding: 20px; /* Padding for sections */
+    margin: 20px; /* Margin around sections */
+    background: #fff; /* White background for sections */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Button Styles */
+.button {
+    display: inline-block; /* Make the link behave like a button */
+    background: #007BFF; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Center footer text */
+    margin-top: 20px; /* Space above footer */
+    padding: 10px; /* Padding for footer */
+    background: #333; /* Dark background for footer */
+    color: #fff; /* White text color */
+}
