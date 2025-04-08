@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alan Partridge Soundboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: white;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .soundboard-column {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .soundboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .sample {
+      background-color: #fff;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .sample:hover {
+      background-color: #e91e63;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .duration {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    .controls {
+      margin-top: 1rem;
+    }
+
+    .nav-btn {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      background: #fff;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .tts-column {
+      flex: 1;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: none;
+      resize: none;
+      font-size: 1rem;
+    }
+
+    #speakBtn {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Alan Partridge Soundboard</h1>
+    <div class="container">
+      <section class="soundboard-column">
+        <div class="soundboard" id="soundboard"></div>
+        <div class="controls">
+          <button id="prevBtn" class="nav-btn">⟵</button>
+          <button id="nextBtn" class="nav-btn">⟶</button>
+        </div>
+      </section>
+      <section class="tts-column">
+        <h2>Text to Speech</h2>
+        <textarea id="ttsInput" rows="5" placeholder="Type something..."></textarea>
+        <button id="speakBtn">Speak</button>
+      </section>
+    </div>
+  </main>
+  <script>
+    const samples = [
+      { name: "Aha!", file: "aha.mp3" },
+      { name: "Dan!", file: "dan.mp3" },
+      { name: "Back of the net!", file: "back_of_the_net.mp3" },
+      { name: "Smell my cheese!", file: "cheese.mp3" },
+      { name: "Jurassic Park!", file: "jurassic_park.mp3" },
+      { name: "Knowing me...", file: "knowing_me.mp3" },
+      { name: "Monkey tennis?", file: "monkey_tennis.mp3" },
+      { name: "Kiss my face!", file: "kiss_my_face.mp3" },
+      { name: "Stop getting Bond wrong!", file: "bond_wrong.mp3" },
+      { name: "Lovely stuff", file: "lovely_stuff.mp3" },
+      { name: "Bang!", file: "bang.mp3" },
+      { name: "Cashback!", file: "cashback.mp3" }
+    ];
+
+    const soundboard = document.getElementById("soundboard");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const speakBtn = document.getElementById("speakBtn");
+    const ttsInput = document.getElementById("ttsInput");
+
+    const pageSize = 9;
+    let currentPage = 0;
+
+    function formatDuration(seconds) {
+      return `${seconds.toFixed(1)}s`;
+    }
+
+    function renderSamples() {
+      soundboard.innerHTML = "";
+      const start = currentPage * pageSize;
+      const end = start + pageSize;
+      const pageSamples = samples.slice(start, end);
+
+      pageSamples.forEach(sample => {
+        const btn = document.createElement("button");
+        btn.className = "sample";
+        btn.innerHTML = `${sample.name}`;
+
+        const audio = new Audio(`samples/${sample.file}`);
+        audio.addEventListener("loadedmetadata", () => {
+          const duration = document.createElement("div");
+          duration.className = "duration";
+          duration.textContent = formatDuration(audio.duration);
+          btn.appendChild(duration);
+        });
+
+        btn.addEventListener("click", () => {
+          audio.currentTime = 0;
+          audio.play();
+        });
+
+        soundboard.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = end >= samples.length;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderSamples();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if ((currentPage + 1) * pageSize < samples.length) {
+        currentPage++;
+        renderSamples();
+      }
+    });
+
+    speakBtn.addEventListener("click", () => {
+      const utterance = new SpeechSynthesisUtterance(ttsInput.value);
+      speechSynthesis.speak(utterance);
+    });
+
+    renderSamples();
+  </script>
+</body>
+</html>
