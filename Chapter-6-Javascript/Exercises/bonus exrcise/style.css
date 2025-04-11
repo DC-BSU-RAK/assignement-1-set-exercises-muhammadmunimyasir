@@ -1,0 +1,85 @@
+/* Basic reset for margins and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the game */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Styling for the RGB value display */
+.rgb-value {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Styling for color options */
+.color-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Individual color option styles */
+.color-option {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+/* Hover effect for color options */
+.color-option:hover {
+    border-color: #007BFF;
+}
+
+/* Result message styling */
+.result {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Score display styling */
+.score {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Hidden class for the restart button */
+.hidden {
+    display: none;
+}
+
+/* Restart button styling */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the restart button */
+button:hover {
+    background-color: #0056b3;
+}
